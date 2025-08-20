@@ -1,4 +1,5 @@
 import React from "react";
+import API_URL from '../api';
 
 export default function RecipeDetailModal({ recipe }) {
   if (!recipe) return null;
@@ -7,7 +8,7 @@ export default function RecipeDetailModal({ recipe }) {
     <div className="recipe-modal">
       <h2>{recipe.title}</h2>
       <img
-        src={`http://localhost:5000/images/${recipe.coverImage}`}
+        src={`${API_URL}/images/${recipe.coverImage}`}
         alt={recipe.title}
         style={{ width: "100%", height: "auto", marginBottom: "1rem" }}
       />

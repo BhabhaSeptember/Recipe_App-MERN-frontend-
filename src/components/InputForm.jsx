@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import API_URL from "../api";
 import axios from "axios";
 
 export default function InputForm({ setIsOpen }) {
@@ -14,7 +15,7 @@ export default function InputForm({ setIsOpen }) {
     let endpoint = isSignUp ? "signUp" : "login";
 
     try {
-      const res = await axios.post(`http://localhost:5000/${endpoint}`, {
+      const res = await axios.post(`${API_URL}/${endpoint}`, {
         email,
         password,
       });

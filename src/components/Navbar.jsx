@@ -39,24 +39,13 @@ export default function Navbar() {
           <li>
             {isLogin ? (
               // User not logged in → open modal
-              <button onClick={() => setIsOpen(true)} className="navItem">
-                My Recipe's
+              <button onClick={() => setIsOpen(true)} className="navItem">My Recipe's
               </button>
             ) : (
               // User logged in → navigate to /myRecipe
               <NavLink to="/myRecipe">My Recipe's</NavLink>
             )}
           </li>
-          {/* <li>
-            {isLogin ? (
-              <NavLink onClick={() => setIsOpen(true)} >My Recipe's</NavLink>
-            ) : (
-              // <button onClick={() => setIsOpen(true)} >
-              //   My Recipe's
-              // </button>
-              <NavLink to="/myRecipe">My Recipe's</NavLink>
-            )}
-          </li> */}
           <li onClick={checkLogin}>
             <p className="login">
               {isLogin ? "Login" : "Logout"}
@@ -74,33 +63,4 @@ export default function Navbar() {
     </>
   );
 
-  // return (
-  //   <>
-  //     <header>
-  //       <h2>Food Blog</h2>
-  //       <ul>
-  //         <li>
-  //           <NavLink to="/">Home</NavLink>
-  //         </li>
-  //         <li onClick={() => isLogin && setIsOpen(true)}>
-  //           <NavLink to={isLogin ? "/myRecipe" : "/"}>My Recipe's</NavLink>
-  //         </li>
-  //         {/* <li onClick={() => isLogin && setIsOpen(true)}>
-  //           <NavLink to={!isLogin ? "/favRecipe" : "/"}>Favorites</NavLink>
-  //         </li> */}
-  //         <li onClick={checkLogin}>
-  //           <p className="login">
-  //             {isLogin ? "Login" : "Logout"}
-  //             {user?.email ? `(${user?.email})` : ""}
-  //           </p>
-  //         </li>
-  //       </ul>
-  //     </header>
-  //     {isOpen && (
-  //       <Modal onClose={() => setIsOpen(false)}>
-  //         <InputForm setIsOpen={() => setIsOpen(false)} />
-  //       </Modal>
-  //     )}
-  //   </>
-  // );
 }

@@ -6,10 +6,11 @@ import MainNavigation from "./components/MainNavigation";
 import axios from "axios";
 import AddFoodRecipe from "./pages/AddFoodRecipe";
 import EditRecipe from "./pages/EditRecipe";
+import API_URL from "./api";
 
 const getAllRecipes = async () => {
   let allRecipes = [];
-  await axios.get("http://localhost:5000/recipe").then((res) => {
+  await axios.get(`${API_URL}/recipe`).then((res) => {
     allRecipes = res.data;
   });
   return allRecipes;
@@ -22,9 +23,6 @@ const getMyRecipes = async () => {
   let allRecipes = await getAllRecipes();
   console.log("All recipes:", allRecipes);
 
-  // return allRecipes.filter(
-  //   (item) => item.createdBy.toString() === user._id.toString()
-  // );
 
   let filtered = allRecipes.filter((item) => {
     console.log("Recipe creator: ", item.createdBy);
