@@ -15,7 +15,7 @@ export default function InputForm({ setIsOpen }) {
     let endpoint = isSignUp ? "signUp" : "login";
 
     try {
-      const res = await axios.post(`${API_URL}/${endpoint}`, {
+      const res = await axios.post(`https://recipeappmern-backend.onrender.com/${endpoint}`, {
         email,
         password,
       });

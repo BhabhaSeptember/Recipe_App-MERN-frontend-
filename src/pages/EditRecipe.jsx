@@ -10,7 +10,7 @@ export default function EditRecipe() {
 
   useEffect(() => {
     const getData = async () => {
-      await axios.get(`${API_URL}/recipe/${id}`).then((response) => {
+      await axios.get(`https://recipeappmern-backend.onrender.com/recipe/${id}`).then((response) => {
         let res = response.data;
         setRecipeData({
           title: res.title,
@@ -37,7 +37,7 @@ export default function EditRecipe() {
     e.preventDefault();
     console.log(recipeData);
     await axios
-      .put(`${API_URL}/recipe/${id}`, recipeData, {
+      .put(`https://recipeappmern-backend.onrender.com/recipe/${id}`, recipeData, {
         headers: {
           "Content-Type": "multipart/form-data",
           authorization: "Bearer " + localStorage.getItem("token"),

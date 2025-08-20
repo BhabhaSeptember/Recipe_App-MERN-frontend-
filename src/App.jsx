@@ -10,7 +10,7 @@ import API_URL from "./api";
 
 const getAllRecipes = async () => {
   let allRecipes = [];
-  await axios.get(`${API_URL}/recipe`).then((res) => {
+  await axios.get(`https://recipeappmern-backend.onrender.com/recipe`).then((res) => {
     allRecipes = res.data;
   });
   return allRecipes;

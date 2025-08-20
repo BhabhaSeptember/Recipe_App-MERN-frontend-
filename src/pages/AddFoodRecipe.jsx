@@ -20,7 +20,7 @@ export default function AddFoodRecipe() {
   const onHandleSubmit = async (e) => {
     e.preventDefault();
     console.log(recipeData);
-    await axios.post(`${API_URL}/recipe`, recipeData, {
+    await axios.post(`https://recipeappmern-backend.onrender.com/recipe`, recipeData, {
         headers: {
           "Content-Type": "multipart/form-data",
           "authorization": "Bearer "+localStorage.getItem("token")

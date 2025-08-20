@@ -8,7 +8,7 @@ export default function RecipeDetailModal({ recipe }) {
     <div className="recipe-modal">
       <h2>{recipe.title}</h2>
       <img
-        src={`${API_URL}/images/${recipe.coverImage}`}
+        src={`https://recipeappmern-backend.onrender.com/images/${recipe.coverImage}`}
         alt={recipe.title}
         style={{ width: "100%", height: "auto", marginBottom: "1rem" }}
       />
